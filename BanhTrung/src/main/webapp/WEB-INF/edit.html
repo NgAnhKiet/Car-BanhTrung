@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit cake</title>
+</head>
+<body>
+<h1>Edit cake</h1>
+<form th:action="@{/cake/update}" method="post" th:object="${cake}" novalidate="novalidate">
+    ID:
+    <input type="hidden" required th:field="*{id}" placeholder="ID">
+    <br>
+    Name:
+    <input type="text" required th:field="*{name}" placeholder="Name">
+    <br>
+    Details:
+    <input type="text" required th:field="*{details}" placeholder="Details">
+    <br>
+    Type:
+    <input type="text" required th:field="*{type}" placeholder="Type">
+    <br>
+    Price:
+    <input type="text" required th:field="*{price}" placeholder="Price">
+    <br>
+    Status:
+    <select th:field="*{status}">
+        <option th:value="true">True</option>
+        <option th:value="false">False</option>
+    </select>
+    <br>
+    <button type="submit">Edit</button>
+</form>
+</body>
+</html>

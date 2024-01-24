@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update car</title>
+</head>
+<body>
+<h1>Create car</h1>
+<form th:action="@{/car/update}" method="post" th:object="${car}" novalidate="novalidate">
+    Id :
+    <input type="number" required th:field="*{id}" placeholder="Input ID car">
+    <br>
+    Name:
+    <input type="text" required th:field="*{name}" placeholder="Input name car">
+    <br>
+    Details:
+    <input type="text" required th:field="*{details}" placeholder="Input details car">
+    <br>
+    Manufacturer:
+    <input type="text" required th:field="*{manufacturer}"placeholder="Input manufacturer car">
+    <br>
+    Price:
+    <input type="number" required th:field="*{price}" placeholder="Input price car">
+    <br>
+    Status:
+    <select th:field="*{status}">
+        <option th:value="'true'" th:text="True"></option>
+        <option th:value="'false'" th:text="False"></option>
+    </select>
+    <br>
+    <br>
+    <button type="submit">Update</button>
+</form>
+</body>
+</html>
